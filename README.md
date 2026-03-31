@@ -40,14 +40,18 @@ Portfolio-Optimization-Toolkit/
 Clone the repository and install the required dependencies:
 
 ```bash
-git clone [https://github.com/YourUsername/Portfolio-Optimization-Toolkit.git](https://github.com/YourUsername/Portfolio-Optimization-Toolkit.git)
+git clone [https://github.com/WuYefan77/Portfolio-Optimization-Toolkit.git](https://github.com/WuYefan77/Portfolio-Optimization-Toolkit.git)
 cd Portfolio-Optimization-Toolkit
 pip install -r requirements.txt
+```
 
+---
 
 ## Quick Start Example
+
 The toolkit is designed for intuitive, OOP-based portfolio construction. Here is a minimal example:
 
+```python
 import numpy as np
 from portfolio_optimizer.optimizer import StaticOptimizer
 
@@ -69,5 +73,6 @@ constraints = ({'type': 'eq', 'fun': lambda w: np.sum(w) - 1.0})
 # 4. Solve for Maximum Sharpe Ratio
 result = opt.maximize_sharpe(rf=0.02, bounds=bounds, constraints=constraints)
 print(f"Optimal Weights: {np.round(result.x, 4)}")
+```
 
 For more advanced use cases, including dynamic style-band constraints and Model Fragility (Non-PSD) stress testing, please refer to the Jupyter Notebooks in this repository.
