@@ -19,3 +19,10 @@ def port_perf(w, mu, S):
     r = float(w @ mu)
     v = float(np.sqrt(w @ S @ w))
     return r, v
+
+def exp_utility(mu, sigma, gamma=1.0):
+    """
+    Calculate the Exponential (CARA) utility: E[U] = -exp(-γ(μ - 0.5 γ σ^2)).
+    Used for assessing investor satisfaction under different risk profiles.
+    """
+    return -np.exp(-gamma * (mu - 0.5 * gamma * sigma**2))
